@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>DiSyO</title>
+    <link rel="stylesheet" href="scholarly.css">
+    <link rel="stylesheet" href="node_modules/prismjs/themes/prism-coy.css">
+    <script src="node_modules/prismjs/prism.js" defer></script>
+  </head>
+  <body prefix="schema: http://schema.org/ xsd: 	http://www.w3.org/2001/XMLSchema# sa: https://ns.science.ai/">
+   <article id="what" typeof="schema:ScholarlyArticle" resource="#">
+	   <header>
+	      <p class="title">DiSyO</p>
+		  <p class="subtitle">Etape dezvoltare</p>
+	    </header>
+	      <section typeof="schema:description">
+	        <ol>
+	          <li property="schema:author" typeof="sa:ContributorRole">
+	              <span property="schema:givenName">Valeriu</span>
+	              <span property="schema:familyName">Motroi</span>
+	            <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+	              <a property="schema:email" href="mailto:valeriu.s.motroi@info.uaic.ro" title="corresponding author">&#9993;</a>
+	            </sup>
+	          </li>
+	          <li property="schema:author" typeof="sa:ContributorRole">
+	              <span property="schema:givenName">Matei</span>
+	              <span property="schema:familyName">Micu</span>
+				<sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+					  <a property="schema:email" href="mailto:matei.micu@info.uaic.ro" title="corresponding author">&#9993;</a>
+	            </sup>
+	          </li>
+			  <li property="schema:author" typeof="sa:ContributorRole">
+	              <span property="schema:givenName">Iulian</span>
+	              <span property="schema:familyName">Antioch</span>
+				<sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+					  <a property="schema:email" href="mailto:iulia.antioch@info.uaic.ro" title="corresponding author">&#9993;</a>
+	            </sup>
+	          </li>
+	        </ol>
+	      </section>
+
+		  <section typeof="sa:Abstract" id="abstract">
+			<h3>Etapele intermediare ale dezvoltarii aplicatiei</h3>
+			<section typeof="schema:description">
+				<p>0. O scurta descriere a aplicatiei.</p>
+				<iframe src="DiSyO-Descriere.pdf" width="976" height="976" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+		        </figure>
+		        <p>Status: Done</p>
+			</section>
+			<section typeof="schema:description">
+				<p>1. Discutii asupra temei (tehnologii folosite, structura bazei de date, arhitectura aplicatiei).</p>
+				<ul>
+				    <p>Tehnologii folosite:</p>
+					<li>FrontEnd: <a href="https://reactjs.org/">ReactJS</a></li>
+					<li>Backend: <a href="https://www.python.org/">Python</a>, <a href="https://en.wikipedia.org/wiki/Representational_state_transfer"> REST API </a>, <a href="https://graphql.org/">GraphQL</a></li>
+					<li>Database: <a href="https://www.mysql.com/">MySql</a></li>
+					<li>TripleStore: <a href="https://github.com/4store/4store">4store</a></li>
+				</ul>
+			</section >
+			<section typeof="scheam:description">
+				<p>2. Proiectarea diagramei arhitecturale.</p>
+				<figure typeof="sa:Image">
+		            <img src="arhitectura.png" width="976" height="452">
+		            <figcaption>
+						Diagrama arhitecturala
+		            </figcaption>
+		        </figure>
+				<p>Status: Done</p>
+			</section>
+			<section typeof="schema:description">
+				<p>3. Proiectarea Ontologiei.</p>
+				<p>Status: In Progress</p>
+			</section>
+			<section typeof="schema:description">
+				<p>4. Pregatirea Infrastructuri.</p>
+                <p>Vom folosii <a href="https://www.docker.com/">Docker Containere</a> si <a href="https://docs.docker.com/engine/swarm/">Docker Swarm</a> pentru a defini o infrastructura imutabila care defineste toate componentele aplicatie.</p>
+				<p>Status: In Progress</p>
+			</section>
+			<section typeof="schema:description">
+				<p>5. Proiectarea schitei paginilor web din cadrul aplicatiei.</p>
+				<p>Single Page Application care foloseste AJAX pentru continut dinamic</p>
+				<p>Status: In Progress</p>
+				
+			</section>
+			<section typeof="schema:description">
+				<p>6. Realizarea documentatiei privind etapele intermediare ale dezvoltarii proiectului.</p>
+				<p>Status: Partially</p>
+			</section>
+			<section typeof="schema:description">
+				<p>7. Implementare Front-End:</p>
+				<p>Status: In progress </p>
+			</section>
+			<section typeof="schema:description">
+				<p>8. Popularea automata a TripleStor-ului:</p>
+				<ul>
+					<li>In Progress:
+						<ul>
+							<li>Extragerea informatiilor automat de pe <a href="https://landscape.cncf.io/">CNCF Landscape</a> folosind <a href="https://www.python.org/">Python</a></li>
+							<li>Inbogatirea manuala a unor exemple specifice</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section typeof="schema:description">
+				<p>9. Implementare Back-End:</p>
+				<ul>
+					<li>In Progress:
+						<ul>
+                            <li><a href="https://en.wikipedia.org/wiki/Representational_state_transfer"> REST API </a> definit folosint <a href="https://www.openapis.org/"> OpenAPI</a>(aceasta definire poate avea loc doar dupa ce stim elementele descrise folosing ontologia creata)</li>
+							<li><a href="https://graphql.org/">GraphQL</a></li>
+							<li><a href="https://www.w3.org/TR/sparql11-query/">SpartQL endpoint privat</a></li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section typeof="schema:description">
+				<p>10. Testarea aplicatiei</p>
+				<p>Pe parcursul implementari va fi definit</p>
+			</section>
+		  </section>
+	  </article>
+	  </body>
+	  
+	</html><Paste>

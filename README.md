@@ -1,16 +1,11 @@
 ## WADe_project
 
 
-## To Start Frontend
+## To Start Frontend and Backend
 ```
 cd app/frontend
 npm run build
 serve -s build
-```
-
-
-## To Start Backend
-```
-cd app
+cd ..
 python3 manage.py runserver
 ```

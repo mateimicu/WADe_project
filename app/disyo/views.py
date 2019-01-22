@@ -1,13 +1,11 @@
-from rest_framework.response import Response
-from rest_framework.decorators import api_view
-from rest_framework import status
-
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from rest_framework import viewsets
+from disyo.models import DSApplication
+from disyo.serializers import DSApplicationSerializer
 
 
-@api_view(['GET', 'POST'])
-def hello(request):
-  if request.method == 'GET':
-    return Response('Hello')
-  elif request.method == 'POST':
-    return Response({'data': 'Hello'})
+class UserViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = DSApplication.objects.all()
+    serializer_class = DSApplicationSerializer

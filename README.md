@@ -1,11 +1,15 @@
 ## WADe_project
 
 
-## To Start Frontend and Backend
-```
-cd app/frontend
-npm run build
-serve -s build
-cd ..
-python3 manage.py runserver
-```
+## TO DO
+
+* Ontologia (DONE)
+* Populat ontologia (DONE)
+* Jena Fuseki (Sparql Endpoint) (DONE)
+* REST API (Maybe DONE ?)
+* OPEN API (Maybe DONE ?)
+* Sparql Queries hardcoded
+* UI
+  * first page - sparql editor
+  * second page - custom queries
+* Cloud Host

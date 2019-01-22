@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://127.0.0.1/dystio.owl#"
+     xml:base="http://127.0.0.1/dystio.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://127.0.0.1/dystio.owl">
+        <owl:imports rdf:resource="http://schema.org/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://127.0.0.1/c.owl#githubContributorsCount -->
+
+    <owl:DatatypeProperty rdf:about="http://127.0.0.1/c.owl#githubContributorsCount">
+        <rdfs:domain rdf:resource="http://127.0.0.1/dystio.owl#DSApplication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://127.0.0.1/dystio.owl#HQ -->
+
+    <owl:DatatypeProperty rdf:about="http://127.0.0.1/dystio.owl#HQ">
+        <rdfs:domain rdf:resource="http://127.0.0.1/dystio.owl#DSApplication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://127.0.0.1/dystio.owl#SVCUrl -->
+
+    <owl:DatatypeProperty rdf:about="http://127.0.0.1/dystio.owl#SVCUrl">
+        <rdfs:domain rdf:resource="http://127.0.0.1/dystio.owl#DSApplication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://127.0.0.1/dystio.owl#crunchbaseURI -->
+
+    <owl:DatatypeProperty rdf:about="http://127.0.0.1/dystio.owl#crunchbaseURI">
+        <rdfs:domain rdf:resource="http://127.0.0.1/dystio.owl#DSApplication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://127.0.0.1/dystio.owl#githubLatestCommitDate -->
+
+    <owl:DatatypeProperty rdf:about="http://127.0.0.1/dystio.owl#githubLatestCommitDate">
+        <rdfs:domain rdf:resource="http://127.0.0.1/dystio.owl#DSApplication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://127.0.0.1/dystio.owl#githubStars -->
+
+    <owl:DatatypeProperty rdf:about="http://127.0.0.1/dystio.owl#githubStars">
+        <rdfs:domain rdf:resource="http://127.0.0.1/dystio.owl#DSApplication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://127.0.0.1/dystio.owl#homepage -->
+
+    <owl:DatatypeProperty rdf:about="http://127.0.0.1/dystio.owl#homepage">
+        <rdfs:domain rdf:resource="http://127.0.0.1/dystio.owl#DSApplication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://127.0.0.1/dystio.owl#latestTweetDate -->
+
+    <owl:DatatypeProperty rdf:about="http://127.0.0.1/dystio.owl#latestTweetDate">
+        <rdfs:domain rdf:resource="http://127.0.0.1/dystio.owl#DSApplication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://127.0.0.1/dystio.owl#logoURI -->
+
+    <owl:DatatypeProperty rdf:about="http://127.0.0.1/dystio.owl#logoURI">
+        <rdfs:domain rdf:resource="http://127.0.0.1/dystio.owl#DSApplication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://127.0.0.1/dystio.owl#organization -->
+
+    <owl:DatatypeProperty rdf:about="http://127.0.0.1/dystio.owl#organization">
+        <rdfs:domain rdf:resource="http://127.0.0.1/dystio.owl#DSApplication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://127.0.0.1/dystio.owl#twitterURI -->
+
+    <owl:DatatypeProperty rdf:about="http://127.0.0.1/dystio.owl#twitterURI">
+        <rdfs:domain rdf:resource="http://127.0.0.1/dystio.owl#DSApplication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://127.0.0.1/dystio.owl#DSApplication -->
+
+    <owl:Class rdf:about="http://127.0.0.1/dystio.owl#DSApplication">
+        <rdfs:subClassOf rdf:resource="http://schema.org/SoftwareApplication"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.7.2018-12-02T02:23:35Z) https://github.com/owlcs/owlapi -->
+

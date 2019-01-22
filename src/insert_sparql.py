@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 # import sparql
+import datetime
 
 import requests
 import json
 
 # s = sparql.Service("http://127.0.0.1:3030/disyo/update", "utf-8", "POST")
-endpoint = "http://127.0.0.1:3030/disyo/update"
+sparql_endpoint = "http://127.0.0.1:3030/disyo/update"
+rest_endpoint = "http://127.0.0.1:8000/api/dsapplications/"
 
 statement = """
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -13,7 +15,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX schema: <https://schema.org/docs/schemaorg.owl#>
 
-PREFIX ds: <http://http://127.0.0.1:3030/disyo.owl#>
+PREFIX ds: <http://127.0.0.1:8000/api/dsapplications/>
 INSERT DATA {
   ds:%(name_simple)s a            ds:DSApplication ;
                    schema:name  "%(name)s"^^xsd:string ;
@@ -34,7 +36,26 @@ INSERT DATA {
 data = json.loads(open("../data/landscape.json", "r").read())
 for item in data:
 
-    stm = statement % {
+    if not item['Latest Tweet Date']:
+        item['Latest Tweet Date'] = datetime.datetime.now()
+
+    if not item['Github Latest Commit Date']:
+        item['Github Latest Commit Date'] = datetime.datetime.now()
+
+    if not item['Github Stars']:
+        item['Github Stars'] = 0
+
+    if not item['Github Repo']:
+        item['Github Repo'] = "http://not-found.com"
+
+    if not item['Github Contributors Count']:
+        item['Github Contributors Count'] = 0
+
+    if not item['Twitter']:
+        item['Twitter'] = "https://twitter.com"
+
+
+    json_data = {
         "name_simple": item[u'Name'].replace(" ", "").replace("(", "_").replace(")", "_").replace("/", "_"),
         "name": item[u'Name'],
         "crunchbaseURI": item[u'Crunchbase URL'],
@@ -49,9 +70,18 @@ for item in data:
         "SVCUrl": item[u'Github Repo'],
         "twitterURI": item["Twitter"]
     }
-    r = requests.post(endpoint, data={"update": stm})
+
+    stm = statement % json_data
+    r = requests.post(sparql_endpoint, data={"update": stm})
+
+
+    json_data['name'] = json_data['name_simple']
+    del json_data['name_simple']
+    r2 = requests.post(rest_endpoint, data=json_data)
     try:
         r.raise_for_status()
+        r2.raise_for_status()
     except:
         print(stm)
+        print(r2.text)
         raise

@@ -13,3 +13,5 @@ class DSApplication(models.Model):
     organization = models.TextField()
     SVCUrl = models.URLField()
     twitterURI = models.URLField()
+    category = models.TextField()
+    license = models.TextField()

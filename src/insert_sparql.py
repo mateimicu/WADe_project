@@ -29,6 +29,9 @@ INSERT DATA {
                    ds:logoURI "%(logoURI)s"^^xsd:anyURI ;
                    ds:organization "%(organization)s"^^xsd:string ;
                    ds:SVCUrl "%(SVCUrl)s"^^xsd:anyURI ;
+                   schema:applicationCategory "%(category)s"^^xsd:string ;
+                   schema:applicationSubCategory "%(subcategory)s"^^xsd:string ;
+                   ds:license "%(license)s"^^xsd:string ;
                    ds:twitterURI "%(twitterURI)s"^^xsd:anyURI .
 }
 """
@@ -68,7 +71,10 @@ for item in data:
         "logoURI": item["Logo"],
         "organization": item["Organization"],
         "SVCUrl": item[u'Github Repo'],
-        "twitterURI": item["Twitter"]
+        "twitterURI": item["Twitter"],
+        "subcategory": item["Subcategory"],
+        "category": item["Category"],
+        "license": item["License"],
     }
 
     stm = statement % json_data

@@ -1,6 +1,7 @@
 var yasqe = YASQE(document.getElementById("yasqe"), {
   sparql: {
-    showQueryButton: true
+    showQueryButton: true,
+    endpoint: "http://lod.openlinksw.com/sparql/"
   }
 });
 var yasr = YASR(document.getElementById("yasr"), {
@@ -8,4 +9,7 @@ var yasr = YASR(document.getElementById("yasr"), {
 });
 
 yasqe.options.sparql.callbacks.complete = yasr.setResponse;
-/* yasqe.options.sparql.endpoint = 'http://localhost:3030/disyo/query'; */
+
+var url = window.location.href;
+var query = decodeURI(url.match(/sparqleditor\?([^&]*)/)[1]);
+yasqe.setValue(query);

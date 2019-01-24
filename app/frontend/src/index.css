@@ -109,3 +109,11 @@ body {
   padding-top: 1px;
   position: relative;
 }
+
+.hardcodedQueries{
+  clear: both;
+  margin: 20px auto;
+  width: 1000px;
+  padding-top: 1px;
+  position: relative;
+}

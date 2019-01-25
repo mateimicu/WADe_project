@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from 'react-router-dom';
  
-class Query1 extends Component {
+class Query2 extends Component {
   constructor(props) {
     super(props);
     this.state = {value: '0'};
@@ -25,11 +25,11 @@ class Query1 extends Component {
 
   render() {
     return (
-      <details open>
-        <summary> descriere query1</summary>
+      <details>
+        <summary> descriere query2</summary>
         <form onSubmit={this.handleSubmit}>
           <label>
-            GithubStars:&nbsp;
+            count ceva:&nbsp;
             <input type="text" value={this.state.value} onChange={this.handleChange} />
           </label>
           <input type="submit" value="Run Query" />
@@ -39,4 +39,4 @@ class Query1 extends Component {
   }
 }
  
-export default withRouter(Query1);
+export default withRouter(Query2);

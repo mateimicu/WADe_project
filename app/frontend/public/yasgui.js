@@ -11,5 +11,8 @@ var yasr = YASR(document.getElementById("yasr"), {
 yasqe.options.sparql.callbacks.complete = yasr.setResponse;
 
 var url = window.location.href;
-var query = decodeURI(url.match(/sparqleditor\?([^&]*)/)[1]);
-yasqe.setValue(query);
+var res = url.match(/sparqleditor\?([^&]*)/);
+if (res != null) {
+  var query = decodeURI(res[1]);
+  yasqe.setValue(query);
+}

@@ -30,13 +30,6 @@
 					  <a property="schema:email" href="mailto:matei.micu@info.uaic.ro" title="corresponding author">&#9993;</a>
 	            </sup>
 	          </li>
-			  <li property="schema:author" typeof="sa:ContributorRole">
-	              <span property="schema:givenName">Iulia</span>
-	              <span property="schema:familyName">Antioch</span>
-				<sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
-					  <a property="schema:email" href="mailto:iulia.antioch@info.uaic.ro" title="corresponding author">&#9993;</a>
-	            </sup>
-	          </li>
 	        </ol>
 	      </section>
 
@@ -55,7 +48,7 @@
 					<li>FrontEnd: <a href="https://reactjs.org/">ReactJS</a></li>
 					<li>Backend: <a href="https://www.python.org/">Python</a>, <a href="https://en.wikipedia.org/wiki/Representational_state_transfer"> REST API </a>, <a href="https://graphql.org/">GraphQL</a></li>
 					<li>Database: <a href="https://www.mysql.com/">MySql</a></li>
-					<li>TripleStore: <a href="https://github.com/4store/4store">4store</a></li>
+					<li>TripleStore: <a href="https://jena.apache.org/documentation/fuseki2/">Apache Jena Fuseki</a></li>
 				</ul>
 			</section >
 			<section typeof="schema:description">
@@ -70,7 +63,7 @@
 			</section>
 			<section typeof="schema:description">
 				<p>3. Proiectarea Ontologiei.</p>
-				<p>Status: In Progress</p>
+				<p>Status: Done</p>
 			</section>
 			<section typeof="schema:description">
 				<p>4. Pregatirea Infrastructuri.</p>
@@ -80,7 +73,7 @@
 			<section typeof="schema:description">
 				<p>5. Proiectarea schitei paginilor web din cadrul aplicatiei.</p>
 				<p>Single Page Application care foloseste AJAX pentru continut dinamic</p>
-				<p>Status: In Progress</p>
+				<p>Status: Done</p>
 				
 			</section>
 			<section typeof="schema:description">
@@ -89,14 +82,14 @@
 			</section>
 			<section typeof="schema:description">
 				<p>7. Implementare Front-End:</p>
-				<p>Status: In progress </p>
+				<p>Status: Done </p>
 			</section>
 			<section typeof="schema:description">
 				<p>8. Popularea automata a TripleStor-ului:</p>
 				<ul>
 					<li>In Progress:
 						<ul>
-							<li>Extragerea informatiilor automat de pe <a href="https://landscape.cncf.io/">CNCF Landscape</a> folosind <a href="https://www.python.org/">Python</a></li>
+                            <li>Extragerea informatiilor automat de pe <a href="https://landscape.cncf.io/">CNCF Landscape</a> si <a href="https://github.com/">GitHub</a> folosind <a href="https://www.python.org/">Python</a> pentru a popula ontologia</li>
 							<li>Inbogatirea manuala a unor exemple specifice</li>
 						</ul>
 					</li>
@@ -105,11 +98,11 @@
 			<section typeof="schema:description">
 				<p>9. Implementare Back-End:</p>
 				<ul>
-					<li>In Progress:
+					<li>Done
 						<ul>
-                            <li><a href="https://en.wikipedia.org/wiki/Representational_state_transfer"> REST API </a> definit folosint <a href="https://www.openapis.org/"> OpenAPI</a>(aceasta definire poate avea loc doar dupa ce stim elementele descrise folosing ontologia creata)</li>
+                            <li><a href="https://en.wikipedia.org/wiki/Representational_state_transfer"> REST API </a> definit folosint <a href="https://www.openapis.org/"> OpenAPI</a> (aceasta definire poate avea loc doar dupa ce stim elementele descrise folosing ontologia creata)</li>
 							<li><a href="https://graphql.org/">GraphQL</a></li>
-							<li><a href="https://www.w3.org/TR/sparql11-query/">SpartQL endpoint privat</a></li>
+                            <li><a href="https://www.w3.org/TR/sparql11-query/">SpartQL endpoint privat</a> folosind <a href="https://jena.apache.org/documentation/fuseki2/">Apache Jena Fuseki</a></li>
 						</ul>
 					</li>
 				</ul>

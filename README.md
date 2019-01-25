@@ -6,21 +6,22 @@
 * Ontologia (DONE)
 * Populat ontologia (DONE)
 * Jena Fuseki (Sparql Endpoint) (DONE)
-* REST API (Maybe DONE ?) 
+* REST API (Done)  -> update fields mapping with new model
 * OPEN API (Maybe DONE ?) - completare definitie cu raspunsuri si alte date de interes
 * Sparql Queries hardcoded
-* UI
-  * first page - sparql editor
-  * second page - custom queries
+* UI ( Done )
+  * first page - sparql editor (done)
+  * second page - custom queries (done)
+  * graphql (done)
 * Cloud Host
-  * Docker containers / Kubernetes ? 
-* Valideaza HTML/CSS
+  * Docker containers / Kubernetes ?
+* Valideaza HTML/CSS (Done)
 * Update raport
-* GraphQL
 * Video
 
 Preprocesare:
 - coreleaza limbajele de programare de pe github in ontologie
+- licentele
 
 Query "smart":
 

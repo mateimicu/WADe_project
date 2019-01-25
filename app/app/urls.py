@@ -14,4 +14,5 @@ schema_view = get_swagger_view(title='Disyo API')
 urlpatterns = [
     url(r'^api-demo/$', schema_view),
     path(r'api/', include(router.urls)),
+    path('', include('disyo.urls')),
 ]

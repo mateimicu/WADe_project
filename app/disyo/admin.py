@@ -1,3 +1,5 @@
 from django.contrib import admin
+from disyo.models import DSApplication
 
-# Register your models here.
+
+admin.site.register(DSApplication)

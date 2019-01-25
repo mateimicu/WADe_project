@@ -15,3 +15,6 @@ class DSApplication(models.Model):
     twitterURI = models.URLField()
     category = models.TextField()
     license = models.TextField()
+
+    def __str__(self):
+      return self.title

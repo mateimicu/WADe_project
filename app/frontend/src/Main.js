@@ -29,7 +29,7 @@ class Main extends Component {
           <div className="content">
             <Route exact path='/' component={Home}/>
             <Route path="/sparqleditor" component={SparQLEditor}/>
-            <Route path="/graphqlendpoint" component={() => {window.location = 'https://google.com/';}}/>
+            <Route path="/graphqlendpoint" component={() => {window.location = 'http://localhost:8000/graphql/';}}/>
           </div>
         </div>
       </HashRouter>

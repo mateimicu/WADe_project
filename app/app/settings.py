@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'rest_framework_swagger',
     'corsheaders',
     'disyo',
+    'graphene_django',
 ]
 
 MIDDLEWARE = [

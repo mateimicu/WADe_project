@@ -14,7 +14,9 @@ SECRET_KEY = '49b)uu@rvg&3%8uple%!qua+@$(*e1u5rx&p=dqo87n^k#0g+l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+ 'api.disyo.xyz',
+]
 
 
 # Application definition

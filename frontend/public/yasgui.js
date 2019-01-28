@@ -1,7 +1,7 @@
 var yasqe = YASQE(document.getElementById("yasqe"), {
   sparql: {
     showQueryButton: true,
-    endpoint: "http://127.0.0.1:3030/disyo/query"
+    endpoint: "http://sparql.disyo.xyz/disyo/query"
   }
 });
 var yasr = YASR(document.getElementById("yasr"), {

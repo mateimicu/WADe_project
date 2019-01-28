@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: sparql-backend-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: sparql.disyo.xyz
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: sparql-backend
+          servicePort: 80

@@ -1,15 +1,21 @@
 #!/usr/bin/env python3
-# import sparql
+"""Sync the API and Triple Store with https://landscape.cncf.io/ data."""
+
+import csv
 import datetime
+import json
+import multiprocessing
 
 import requests
-import json
+# pylint: disable=broad-except
 
-# s = sparql.Service("http://127.0.0.1:3030/disyo/update", "utf-8", "POST")
-sparql_endpoint = "http://sparql.disyo.xyz/disyo/update"
-rest_endpoint = "http://api.disyo.xyz/api/dsapplications/"
+PROCESS_COUNT = 100
 
-statement = """
+SPARQL_ENDPOINT = "http://sparql.disyo.xyz/disyo/update"
+API_ENDPOINT = "http://api.disyo.xyz/api/dsapplications/"
+DATA_PATH = "../data/landscape.json"
+
+SPARQL_UPDATE_TEMPLATE = """
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -35,10 +41,9 @@ INSERT DATA {
                    ds:twitterURI "%(twitterURI)s"^^xsd:anyURI .
 }
 """
-# r = requests.post(endpoint, data={"update": statement})
-data = json.loads(open("../data/landscape.json", "r").read())
-for item in data:
 
+def clean_item(item):
+    """Normalize an item."""
     if not item['Latest Tweet Date']:
         item['Latest Tweet Date'] = datetime.datetime.now()
 
@@ -59,7 +64,13 @@ for item in data:
 
 
     json_data = {
-        "name_simple": item[u'Name'].replace(" ", "").replace("(", "_").replace(")", "_").replace("/", "_"),
+        "name_simple": (item[u'Name']
+                        .replace(" ", "")
+                        .replace("(", "_")
+                        .replace(")", "_")
+                        .replace("/", "_")
+                        .replace(".", "_")
+                        .replace('"', '')),
         "name": item[u'Name'],
         "crunchbaseURI": item[u'Crunchbase URL'],
         "homepage": item[u'Homepage'],
@@ -74,30 +85,67 @@ for item in data:
         "twitterURI": item["Twitter"],
         "subcategory": item["Subcategory"],
         "category": item["Category"],
-        "license": item["License"],
+        "license": (item["License"]
+                    .replace(" ", "")
+                    .replace("(", "_")
+                    .replace(")", "_")
+                    .replace("/", "_")
+                    .replace(".", "_")
+                    .replace('"', '')),
     }
 
-    stm = statement % json_data
-    r1 = requests.post(sparql_endpoint, data={"update": stm})
+    return json_data
 
+def post_sparql(json_data):
+    """Add data to the Triple Store."""
+    stm = SPARQL_UPDATE_TEMPLATE % json_data
+    response_sparql = requests.post(SPARQL_ENDPOINT, data={"update": stm})
 
-    json_data['name'] = json_data['name_simple']
-    del json_data['name_simple']
-    r2 = requests.post(rest_endpoint, data=json_data)
     try:
-        r1.raise_for_status()
+        response_sparql.raise_for_status()
     except:
         print(stm)
-        print(r1.text)
-        import pdb; pdb.set_trace()
-        if r1.json().get("name", [""])[0] == "ds application with this name already exists.":
-            continue
+        print(response_sparql.text)
         raise
+
+def post_api(json_data):
+    """Add data to the API."""
+    # modify data for the api
+    json_data['name'] = json_data['name_simple']
+    del json_data['name_simple']
+
+
+    item_url = requests.compat.urljoin(API_ENDPOINT, json_data['name'])
+    response_check = requests.get(item_url)
+    if response_check.status_code == 200:
+        # delete the item
+        print("Delete ", json_data['name'])
+        requests.delete(item_url).raise_for_status()
+
+    response_api = requests.post(API_ENDPOINT, data=json_data)
     try:
-        r2.raise_for_status()
+        response_api.raise_for_status()
     except:
         print(json_data)
-        print(r2.text)
-        if r2.json().get("name", [""])[0] == "ds application with this name already exists.":
-            continue
+        print(response_api.text)
         raise
+
+def process_item(item):
+    """Upload the item to the API and TripleStore."""
+    try:
+        print("Sending", item["name_simple"])
+        post_sparql(item)
+        post_api(item)
+    except Exception as exc:
+        print("Failed to upload ", item)
+        print('Exception :', exc, "\n\n\n")
+
+
+def main():
+    """Main entry point."""
+    clean_data = [clean_item(item) for item in json.loads(open(DATA_PATH, "r").read())]
+    process_pool = multiprocessing.Pool(PROCESS_COUNT)
+    process_pool.map(process_item, clean_data)
+
+if __name__ == '__main__':
+    main()

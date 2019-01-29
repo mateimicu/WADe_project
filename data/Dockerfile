@@ -9,4 +9,5 @@ WORKDIR /disyo/apache-jena-fuseki-3.10.0
 COPY disyo.owl disyo.owl
 RUN mkdir run
 COPY shiro.ini run/shiro.ini
-CMD ./fuseki-server --update --debug --file=disyo.owl /disyo
+COPY entrypoint.sh entrypoint.sh
+CMD ./entrypoint.sh

@@ -17,7 +17,7 @@ router.register(r'dsapplications', views.UserViewSet)
 schema_view = get_swagger_view(title='Disyo API')
 
 urlpatterns = [
-    url(r'^api-demo/$', schema_view),
+    url(r'^demo/$', schema_view),
     path('graphql/', GraphQLView.as_view(graphiql=True, schema=schema)),
     path(r'', include(router.urls)),
 ]

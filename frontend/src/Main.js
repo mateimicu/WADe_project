@@ -22,6 +22,7 @@ class Main extends Component {
                   <li className="menu__list-item"><NavLink className="menu__link" exact to="/">Home</NavLink></li>
                   <li className="menu__list-item"><NavLink className="menu__link" to="/sparqleditor" onClick={() => {window.location.reload();}}>SparQL Editor</NavLink></li>
                   <li className="menu__list-item"><NavLink className="menu__link" to="/graphqlendpoint">GraphQL Endpoint</NavLink></li>
+                  <li className="menu__list-item"><NavLink className="menu__link" to="/api">REST API</NavLink></li>
                 </ul>
               </div>
             </nav>
@@ -30,6 +31,7 @@ class Main extends Component {
             <Route exact path='/' component={Home}/>
             <Route path="/sparqleditor" component={SparQLEditor}/>
             <Route path="/graphqlendpoint" component={() => {window.location = 'http://api.disyo.xyz/graphql/';}}/>
+            <Route path="/api" component={() => {window.location = 'http://api.disyo.xyz/demo/';}}/>
           </div>
         </div>
       </HashRouter>

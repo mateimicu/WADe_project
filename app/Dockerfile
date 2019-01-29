@@ -9,4 +9,4 @@ COPY /manage.py .
 
 RUN pip install -r requirements.txt
 RUN set -x
-CMD python ./manage.py  makemigrations && python ./manage.py migrate && python ./manage.py runserver -v 3 0.0.0.0:80
+CMD python ./manage.py  makemigrations disyo && python ./manage.py migrate && python ./manage.py runserver -v 3 0.0.0.0:80

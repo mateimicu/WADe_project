@@ -61,33 +61,87 @@
 		        </figure>
 				<p>Status: Done</p>
 			</section>
+
 			<section typeof="schema:description">
 				<p>3. Proiectarea Ontologiei.</p>
+                <p>Aceasta a fost publicata la adresa (cu tot cu date)<a href="http://sparql.disyo.xyz/disyo">http://sparql.disyo.xyz/disyo</a></p>
 				<p>Status: Done</p>
 			</section>
 			<section typeof="schema:description">
 				<p>4. Pregatirea Infrastructuri.</p>
-                <p>Vom folosi <a href="https://www.docker.com/">Docker Containere</a> si <a href="https://docs.docker.com/engine/swarm/">Docker Swarm</a> pentru a defini o infrastructura imutabila care defineste toate componentele aplicatie.</p>
-				<p>Status: In Progress</p>
+				<figure typeof="sa:Image">
+		            <img src="infrastructure diagram.png" width="976" height="452">
+		            <figcaption>
+						Diagrama arhitecturala deployment
+		            </figcaption>
+		        </figure>
+                <p>Vom folosi <a href="https://www.docker.com/">Docker Containere</a> si <a href="http://kubernetes.io/">Kubernetes</a> pentru a defini o infrastructura imutabila care defineste toate componentele aplicatie.</p>
+                <p>The host is currently <a href="https://www.digitalocean.com/">Digital Ocean</a> and has a Cluster with 3 nodes.</p>
+				<p>Status: Done</p>
 			</section>
 			<section typeof="schema:description">
 				<p>5. Proiectarea schitei paginilor web din cadrul aplicatiei.</p>
-				<p>Single Page Application care foloseste AJAX pentru continut dinamic</p>
+				<p>Single Page Application care foloseste AJAX/fetch pentru continut dinamic</p>
+				<figure typeof="sa:Image">
+		            <img src="query.png" width="976" height="452">
+		            <figcaption>
+						Exemplu de "query" din UI
+		            </figcaption>
+		        </figure>
+
+				<figure typeof="sa:Image">
+		            <img src="sparql_endpoint.png" width="976" height="452">
+		            <figcaption>
+						Endpoint de SparQL (cu tot cu editor)
+		            </figcaption>
+		        </figure>
+
+				<figure typeof="sa:Image">
+		            <img src="grapql_endpoint.png" width="976" height="452">
+		            <figcaption>
+						Endpoint de grapql (cu tot cu editor)
+		            </figcaption>
+		        </figure>
 				<p>Status: Done</p>
-				
-			</section>
-			<section typeof="schema:description">
-				<p>6. Realizarea documentatiei privind etapele intermediare ale dezvoltarii proiectului.</p>
-				<p>Status: Partially</p>
 			</section>
 			<section typeof="schema:description">
 				<p>7. Implementare Front-End:</p>
+                <ul>
+                    <li> 
+                        <ul>
+                            <li>Editorul de SparQL</li>
+                            <li>Status: Done</li>
+				        </ul>
+                    </li>
+
+                    <li> 
+                        <ul>
+                            <li>Pagina Iteractiva cu Query</li>
+                            <li>Status: Done</li>
+				        </ul>
+                    </li>
+
+                    <li> 
+                        <ul>
+                            <li>Pagina pentru interactiunea cu GraphQL</li>
+                            <li>Status: Done</li>
+				        </ul>
+                    </li>
+
+
+                    <li> 
+                        <ul>
+                            <li>Pagina pentru interactiunea cu REST Api</li>
+                            <li>Status: Done</li>
+				        </ul>
+                    </li>
+                </ul>
 				<p>Status: Done </p>
 			</section>
 			<section typeof="schema:description">
 				<p>8. Popularea automata a TripleStor-ului:</p>
 				<ul>
-					<li>In Progress:
+					<li>Done (dar se pot imbunatati):
 						<ul>
                             <li>Extragerea informatiilor automat de pe <a href="https://landscape.cncf.io/">CNCF Landscape</a> si <a href="https://github.com/">GitHub</a> folosind <a href="https://www.python.org/">Python</a> pentru a popula ontologia</li>
 							<li>Inbogatirea manuala a unor exemple specifice</li>
@@ -109,10 +163,10 @@
 			</section>
 			<section typeof="schema:description">
 				<p>10. Testarea aplicatiei</p>
-				<p>Pe parcursul implementarii va fi definit</p>
+				<p>A fost facuta manual</p>
 			</section>
 		  </section>
 	  </article>
 	  </body>
 	  
-	</html><Paste>
+	</html>

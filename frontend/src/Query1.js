@@ -271,7 +271,7 @@ WHERE {
 			</select>
           </label>
 
-          <input type="button" value="Run Query" />
+          <input type="button" value="Run Query" onClick={this.handleSubmit}/>
         </form>
         <div>
            <table >

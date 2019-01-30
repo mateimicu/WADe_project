@@ -21,7 +21,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX schema: <https://schema.org/docs/schemaorg.owl#>
 
-PREFIX ds: <http://sparql.disyo.xyz/disyo>
+PREFIX ds: <http://sparql.disyo.xyz/disyo#>
 INSERT DATA {
   ds:%(name_simple)s a            ds:DSApplication ;
                    schema:name  "%(name)s"^^xsd:string ;
@@ -38,8 +38,8 @@ INSERT DATA {
                    schema:applicationCategory "%(category)s"^^xsd:string ;
                    schema:applicationSubCategory "%(subcategory)s"^^xsd:string ;
                    ds:license "%(license)s"^^xsd:string ;
-                   ds:twitterURI "%(twitterURI)s"^^xsd:anyURI .
-                   ds:RESTURI "%(name_simple)s"^^xsd:anyURI .
+                   ds:twitterURI "%(twitterURI)s"^^xsd:anyURI ;
+                   ds:RESTURI "http://api.disyo.xyz/dsapplications/%(name_simple)s"^^xsd:anyURI .
 }
 """
 

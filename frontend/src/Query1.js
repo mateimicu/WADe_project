@@ -19,7 +19,7 @@ class Query1 extends Component {
     let getLicensesQuery = `
     SELECT ?license 
 	WHERE {
-	?subject http://sparql.disyo.xyz/disyo/license> ?license
+	?subject <http://sparql.disyo.xyz/disyo#license> ?license
 	}
 	GROUP BY ?license
       `
@@ -130,7 +130,7 @@ GROUP BY ?subCategory
 		let getSubCategoryQuery = `
 SELECT ?subCategory
 WHERE {
-  ?subject <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> http://sparql.disyo.xyz/disyo/DSApplication> .
+  ?subject <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> http://sparql.disyo.xyz/disyo#DSApplication> .
           ?subject <https://schema.org/docs/schemaorg.owl#applicationCategory> ?applicationCategory .
           ?subject <https://schema.org/docs/schemaorg.owl#applicationSubCategory> ?subCategory.
   FILTER( regex(?applicationCategory, "${match}")  ) .
@@ -179,10 +179,10 @@ SELECT ?name ?githubStars ?logoURI ?homepage ?subject ?applicationCategory ?appl
 WHERE {   
   ?subject <https://schema.org/docs/schemaorg.owl#applicationSubCategory>  ?applicationSubCategory . 
   ?subject <https://schema.org/docs/schemaorg.owl#applicationCategory> ?applicationCategory . 
-  ?subject http://sparql.disyo.xyz/disyo/license> ?license .  
-  ?subject http://sparql.disyo.xyz/disyo/githubStars> ?githubStars . 
-  ?subject http://sparql.disyo.xyz/disyo/logoURI> ?logoURI .  
-  ?subject http://sparql.disyo.xyz/disyo/homepage> ?homepage. 
+  ?subject <http://sparql.disyo.xyz/disyo#license> ?license .  
+  ?subject <http://sparql.disyo.xyz/disyo#githubStars> ?githubStars . 
+  ?subject <http://sparql.disyo.xyz/disyo#logoURI> ?logoURI .  
+  ?subject <http://sparql.disyo.xyz/disyo#homepage> ?homepage. 
   ?subject <https://schema.org/docs/schemaorg.owl#name>  ?name.  
   FILTER ( ?githubStars >= "${this.state.githubStars}"^^xsd:integer  ) .
   FILTER( regex(?license, "${match_license}")  ) .
@@ -271,7 +271,7 @@ WHERE {
 			</select>
           </label>
 
-          <input type="submit" value="Run Query" />
+          <input type="button" value="Run Query" />
         </form>
         <div>
            <table >

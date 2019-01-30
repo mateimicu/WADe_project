@@ -144,7 +144,7 @@ input[type="text"], input[type='date'], input[type='number'], select {
   box-shadow: 0 0 8px 0 dodgerBlue;
 }
 
-input[type=submit] {
+input[type=submit], input[type="button"] {
   width: 100%;
   background-color: #ffaa3b;
   color: black;

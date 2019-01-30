@@ -51,6 +51,15 @@
     
 
 
+    <!-- http://sparql.disyo.xyz/disyo#RESTURI -->
+
+    <owl:DatatypeProperty rdf:about="http://sparql.disyo.xyz/disyo#RESTURI">
+        <rdfs:domain rdf:resource="http://sparql.disyo.xyz/disyo#DSApplication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://sparql.disyo.xyz/disyo#SVCUrl -->
 
     <owl:DatatypeProperty rdf:about="http://sparql.disyo.xyz/disyo#SVCUrl">
@@ -140,6 +149,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://schema.org/SoftwareApplication -->
+
+    <owl:Class rdf:about="http://schema.org/SoftwareApplication"/>
     
 
 

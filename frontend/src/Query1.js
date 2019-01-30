@@ -130,7 +130,7 @@ GROUP BY ?subCategory
 		let getSubCategoryQuery = `
 SELECT ?subCategory
 WHERE {
-  ?subject <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> http://sparql.disyo.xyz/disyo#DSApplication> .
+  ?subject <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://sparql.disyo.xyz/disyo#DSApplication> .
           ?subject <https://schema.org/docs/schemaorg.owl#applicationCategory> ?applicationCategory .
           ?subject <https://schema.org/docs/schemaorg.owl#applicationSubCategory> ?subCategory.
   FILTER( regex(?applicationCategory, "${match}")  ) .

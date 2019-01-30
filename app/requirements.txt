@@ -4,3 +4,4 @@ django-cors-headers
 django-rest-swagger
 graphene
 graphene_django
+mysqlclient

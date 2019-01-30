@@ -14,7 +14,9 @@ SECRET_KEY = '49b)uu@rvg&3%8uple%!qua+@$(*e1u5rx&p=dqo87n^k#0g+l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+ 'api.disyo.xyz',
+]
 
 
 # Application definition
@@ -73,11 +75,14 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'disyo',
+        'USER': 'disyo',
+        'PASSWORD': os.getenv("MYSQL_PASSWORD"),
+        'HOST': 'mysql',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
     }
 }
 

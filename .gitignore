@@ -116,3 +116,4 @@ dmypy.json
 
 **/*/app/db.sqlite3*
 **/*/data/catalog-v001.xml
+data/catalog-v001.xml

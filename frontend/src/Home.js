@@ -7,7 +7,6 @@ class Home extends Component {
     return (
       <div className="hardcodedQueries">
         <Query1/>
-        <Query2/>
       </div>
     );
   }

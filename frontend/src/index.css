@@ -15,7 +15,7 @@ body {
 }
 
 .container {
-    width: 1000px;
+    width: 1500px;
     margin: 20px auto;
 }
 
@@ -32,7 +32,8 @@ body {
     background-color: white;
     box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
-    width: 752px;
+    /* width: 752px; */
+    width: 1400px;
     height: 80px;
     display: flex;
     justify-content: space-between;
@@ -113,14 +114,23 @@ body {
 .hardcodedQueries{
   clear: both;
   margin: 20px auto;
-  width: 1000px;
+  width: 1500px;
   padding-top: 1px;
   position: relative;
 }
 
-input[type="text"] {
+table {
   width: 100%;
+}
+
+td {
+  border-color: dodgerBlue;
+  /* box-shadow: 0 0 8px 0 dodgerBlue; */
   border: 2px solid #aaa;
+}
+
+input[type="text"], input[type='date'], input[type='number'], select, tr{
+  width: 100%;
   border-radius: 4px;
   margin: 8px 0;
   outline: none;
@@ -129,12 +139,12 @@ input[type="text"] {
   transition: 0.3s;
 }
 
-input[type="text"]:focus {
+input[type="text"], input[type='date'], input[type='number'], select {
   border-color: dodgerBlue;
   box-shadow: 0 0 8px 0 dodgerBlue;
 }
 
-input[type=submit] {
+input[type=submit], input[type="button"] {
   width: 100%;
   background-color: #ffaa3b;
   color: black;
@@ -149,7 +159,7 @@ input[type=submit] {
 details {
   width: 75%;
   min-height: 5px;
-  max-width: 700px;
+  max-width: 1500px;
   padding: 45px 70px 45px 45px;
   margin: 0 auto;
   position: relative;

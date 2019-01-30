@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://127.0.0.1:8000/api/dsapplications/"
-     xml:base="http://127.0.0.1:8000/api/dsapplications/"
+<rdf:RDF xmlns="http://sparql.disyo.xyz/disyo#"
+     xml:base="http://sparql.disyo.xyz/disyo"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:terms="http://purl.org/dc/terms/">
-    <owl:Ontology rdf:about="http://127.0.0.1:8000/api/dsapplications/">
+    <owl:Ontology rdf:about="http://sparql.disyo.xyz/disyo">
         <owl:imports rdf:resource="http://schema.org/"/>
     </owl:Ontology>
     
@@ -27,106 +27,115 @@
     <!-- http://127.0.0.1/c.owl#githubContributorsCount -->
 
     <owl:DatatypeProperty rdf:about="http://127.0.0.1/c.owl#githubContributorsCount">
-        <rdfs:domain rdf:resource="http://127.0.0.1:8000/api/dsapplications/#DSApplication"/>
+        <rdfs:domain rdf:resource="http://sparql.disyo.xyz/disyo#DSApplication"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://127.0.0.1:8000/api/dsapplications/license -->
+    <!-- http://sparql.disyo.xyz/disyolicense -->
 
-    <owl:DatatypeProperty rdf:about="http://127.0.0.1:8000/api/dsapplications/license">
-        <rdfs:domain rdf:resource="http://127.0.0.1:8000/api/dsapplications/#DSApplication"/>
+    <owl:DatatypeProperty rdf:about="http://sparql.disyo.xyz/disyolicense">
+        <rdfs:domain rdf:resource="http://sparql.disyo.xyz/disyo#DSApplication"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://127.0.0.1:8000/api/dsapplications/#HQ -->
+    <!-- http://sparql.disyo.xyz/disyo#HQ -->
 
-    <owl:DatatypeProperty rdf:about="http://127.0.0.1:8000/api/dsapplications/#HQ">
-        <rdfs:domain rdf:resource="http://127.0.0.1:8000/api/dsapplications/#DSApplication"/>
+    <owl:DatatypeProperty rdf:about="http://sparql.disyo.xyz/disyo#HQ">
+        <rdfs:domain rdf:resource="http://sparql.disyo.xyz/disyo#DSApplication"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://127.0.0.1:8000/api/dsapplications/#SVCUrl -->
+    <!-- http://sparql.disyo.xyz/disyo#RESTURI -->
 
-    <owl:DatatypeProperty rdf:about="http://127.0.0.1:8000/api/dsapplications/#SVCUrl">
-        <rdfs:domain rdf:resource="http://127.0.0.1:8000/api/dsapplications/#DSApplication"/>
+    <owl:DatatypeProperty rdf:about="http://sparql.disyo.xyz/disyo#RESTURI">
+        <rdfs:domain rdf:resource="http://sparql.disyo.xyz/disyo#DSApplication"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://127.0.0.1:8000/api/dsapplications/#crunchbaseURI -->
+    <!-- http://sparql.disyo.xyz/disyo#SVCUrl -->
 
-    <owl:DatatypeProperty rdf:about="http://127.0.0.1:8000/api/dsapplications/#crunchbaseURI">
-        <rdfs:domain rdf:resource="http://127.0.0.1:8000/api/dsapplications/#DSApplication"/>
+    <owl:DatatypeProperty rdf:about="http://sparql.disyo.xyz/disyo#SVCUrl">
+        <rdfs:domain rdf:resource="http://sparql.disyo.xyz/disyo#DSApplication"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://127.0.0.1:8000/api/dsapplications/#githubLatestCommitDate -->
+    <!-- http://sparql.disyo.xyz/disyo#crunchbaseURI -->
 
-    <owl:DatatypeProperty rdf:about="http://127.0.0.1:8000/api/dsapplications/#githubLatestCommitDate">
-        <rdfs:domain rdf:resource="http://127.0.0.1:8000/api/dsapplications/#DSApplication"/>
+    <owl:DatatypeProperty rdf:about="http://sparql.disyo.xyz/disyo#crunchbaseURI">
+        <rdfs:domain rdf:resource="http://sparql.disyo.xyz/disyo#DSApplication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://sparql.disyo.xyz/disyo#githubLatestCommitDate -->
+
+    <owl:DatatypeProperty rdf:about="http://sparql.disyo.xyz/disyo#githubLatestCommitDate">
+        <rdfs:domain rdf:resource="http://sparql.disyo.xyz/disyo#DSApplication"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://127.0.0.1:8000/api/dsapplications/#githubStars -->
+    <!-- http://sparql.disyo.xyz/disyo#githubStars -->
 
-    <owl:DatatypeProperty rdf:about="http://127.0.0.1:8000/api/dsapplications/#githubStars">
-        <rdfs:domain rdf:resource="http://127.0.0.1:8000/api/dsapplications/#DSApplication"/>
+    <owl:DatatypeProperty rdf:about="http://sparql.disyo.xyz/disyo#githubStars">
+        <rdfs:domain rdf:resource="http://sparql.disyo.xyz/disyo#DSApplication"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://127.0.0.1:8000/api/dsapplications/#homepage -->
+    <!-- http://sparql.disyo.xyz/disyo#homepage -->
 
-    <owl:DatatypeProperty rdf:about="http://127.0.0.1:8000/api/dsapplications/#homepage">
-        <rdfs:domain rdf:resource="http://127.0.0.1:8000/api/dsapplications/#DSApplication"/>
+    <owl:DatatypeProperty rdf:about="http://sparql.disyo.xyz/disyo#homepage">
+        <rdfs:domain rdf:resource="http://sparql.disyo.xyz/disyo#DSApplication"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://127.0.0.1:8000/api/dsapplications/#latestTweetDate -->
+    <!-- http://sparql.disyo.xyz/disyo#latestTweetDate -->
 
-    <owl:DatatypeProperty rdf:about="http://127.0.0.1:8000/api/dsapplications/#latestTweetDate">
-        <rdfs:domain rdf:resource="http://127.0.0.1:8000/api/dsapplications/#DSApplication"/>
+    <owl:DatatypeProperty rdf:about="http://sparql.disyo.xyz/disyo#latestTweetDate">
+        <rdfs:domain rdf:resource="http://sparql.disyo.xyz/disyo#DSApplication"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://127.0.0.1:8000/api/dsapplications/#logoURI -->
+    <!-- http://sparql.disyo.xyz/disyo#logoURI -->
 
-    <owl:DatatypeProperty rdf:about="http://127.0.0.1:8000/api/dsapplications/#logoURI">
-        <rdfs:domain rdf:resource="http://127.0.0.1:8000/api/dsapplications/#DSApplication"/>
+    <owl:DatatypeProperty rdf:about="http://sparql.disyo.xyz/disyo#logoURI">
+        <rdfs:domain rdf:resource="http://sparql.disyo.xyz/disyo#DSApplication"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://127.0.0.1:8000/api/dsapplications/#organization -->
+    <!-- http://sparql.disyo.xyz/disyo#organization -->
 
-    <owl:DatatypeProperty rdf:about="http://127.0.0.1:8000/api/dsapplications/#organization">
-        <rdfs:domain rdf:resource="http://127.0.0.1:8000/api/dsapplications/#DSApplication"/>
+    <owl:DatatypeProperty rdf:about="http://sparql.disyo.xyz/disyo#organization">
+        <rdfs:domain rdf:resource="http://sparql.disyo.xyz/disyo#DSApplication"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://127.0.0.1:8000/api/dsapplications/#twitterURI -->
+    <!-- http://sparql.disyo.xyz/disyo#twitterURI -->
 
-    <owl:DatatypeProperty rdf:about="http://127.0.0.1:8000/api/dsapplications/#twitterURI">
-        <rdfs:domain rdf:resource="http://127.0.0.1:8000/api/dsapplications/#DSApplication"/>
+    <owl:DatatypeProperty rdf:about="http://sparql.disyo.xyz/disyo#twitterURI">
+        <rdfs:domain rdf:resource="http://sparql.disyo.xyz/disyo#DSApplication"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     </owl:DatatypeProperty>
     
@@ -143,9 +152,15 @@
     
 
 
-    <!-- http://127.0.0.1:8000/api/dsapplications/#DSApplication -->
+    <!-- http://schema.org/SoftwareApplication -->
 
-    <owl:Class rdf:about="http://127.0.0.1:8000/api/dsapplications/#DSApplication">
+    <owl:Class rdf:about="http://schema.org/SoftwareApplication"/>
+    
+
+
+    <!-- http://sparql.disyo.xyz/disyo#DSApplication -->
+
+    <owl:Class rdf:about="http://sparql.disyo.xyz/disyo#DSApplication">
         <rdfs:subClassOf rdf:resource="http://schema.org/SoftwareApplication"/>
     </owl:Class>
 </rdf:RDF>
